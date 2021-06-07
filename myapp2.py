@@ -54,3 +54,15 @@ squarify.plot(sizes=volume, label=labels,
               alpha=0.6)
 plt.axis('off')
 st.pyplot()
+
+
+v=['Count']
+labels = df['Industry']
+# color_list = ['#0f7216', '#b2790c', '#ffe9a3',
+#              '#f9d4d4', '#d35158', '#ea3033']
+
+plt.rc('font', size=5)
+squarify.plot(sizes=v, label=labels,
+              alpha=0.6)
+plt.axis('off')
+st.pyplot()
