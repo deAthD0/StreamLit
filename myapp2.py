@@ -5,13 +5,36 @@ import pandas as pd
 import csv
 import matplotlib.pyplot as plt
 import squarify
+import glob
 st.write("""
 # Naukri.com job profiles
 """)
 
+
+
 st.set_option('deprecation.showPyplotGlobalUse', False)
 # naukri_df = pd.read_csv("naukri_sector_job_list2021-06-04.csv")
 naukri_df = pd.read_csv("naukri_sector_job_infod2021-06-05.csv")
+
+
+
+# Compiling all the csv with their total number of enteries
+path = '/home/astrum/Dev/StreamLit/' # use your path
+all_files = glob.glob(path + "/*.csv")
+
+li = []
+data = pd.DataFrame({'Csv_Date':['0'],
+        'Count':[0]})
+for filename in all_files:
+    df = pd.read_csv(filename, index_col=None, header=0)
+    li.append(df)
+    # creating bar chart's data frame
+    lenght=len(df.index)
+    new_Row={"Csv_Date":str(filename[50:60]),"Count":lenght}
+    data=data.append(new_Row, ignore_index=True)
+
+data=data.drop(labels=0, axis=0)
+
 
 # Defining data frame for sector
 uniqueValues_sector=naukri_df['Sector'].unique()
@@ -25,6 +48,8 @@ for val in uniqueValues_sector:
     sum=sum+o[val]
 df_sector = df_sector.drop(labels=0, axis=0)
 #  Data frame for sector generated
+
+
 
 
 # Data frame for funtional area
@@ -93,8 +118,8 @@ st.write(df_sector)
 
 #Bar chart for given data and number of jobs posted
 st.subheader('Bar chart')
-p = alt.Chart(df_sector).mark_bar().encode(
-    x='Industry',
+p = alt.Chart(data).mark_bar().encode(
+    x='Csv_Date',
     y='Count'
 )
 p = p.properties(
