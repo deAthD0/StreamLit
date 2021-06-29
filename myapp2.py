@@ -94,7 +94,7 @@ def app():
 
     #  Data frame for Role_Category generated
 
-    # Data frame for Role_Category
+    # Data frame for Industry Type
     uniqueValues=naukri_df['Industry_Type'].unique()
     o=naukri_df['Industry_Type'].value_counts()
     df_Industry_t=pd.DataFrame({"Industry_Type":[0], "Count":[0]})

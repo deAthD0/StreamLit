@@ -7,6 +7,8 @@ import matplotlib.pyplot as plt
 import squarify
 import glob
 
+from functions.def_sector import sector_graph
+from functions.def_Industry_type import Industry_type_graph
 
 # def app():
 st.set_option('deprecation.showPyplotGlobalUse', False)
@@ -28,19 +30,8 @@ for filename in all_files:
 
 data=data.drop(labels=0, axis=0)
 
-# print(data.loc[data['Count'] == 4309])
 naukri_df = pd.concat(li, axis=0, ignore_index=True)
+sector_Selected_Data_Frame=naukri_df.loc[naukri_df['Sector'] == "food-processing"]
 
-print(naukri_df.loc[naukri_df['Sector'] == "food-processing"])
-# uniqueValues_sector=naukri_df['Sector'].unique()
-# o=naukri_df['Sector'].value_counts()
-# df_sector=pd.DataFrame({"Sector":[0], "Count":[0]})
-# sum=0
-# for val in uniqueValues_sector:
-#     new_Row={"Sector":str(val),"Count":o[val]}
-#     df_sector=df_sector.append(new_Row, ignore_index=True)
-#     sum=sum+o[val]
-# df_sector = df_sector.drop(labels=0, axis=0)
-# print(df_sector)
-# print(df_sector.loc[df_sector['Sector'] == "food-processing"])
-
+sector_graph(sector_Selected_Data_Frame, df)
+Industry_type_graph(sector_Selected_Data_Frame, df)
