@@ -16,6 +16,10 @@ def Functional_area_graph(data_frame_selected, df):
         else:
             new_Row={"Functional_Area":str(val),"Count":o[val]}
             df_func_Area=df_func_Area.append(new_Row, ignore_index=True)
+
+    df_func_Area = df_func_Area.drop(labels=0, axis=0)
+
+    # print(df_func_Area)
             
     st.write("""
     # Tree graph from Functional Area
