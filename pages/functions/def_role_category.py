@@ -6,14 +6,14 @@ import matplotlib.pyplot as plt
 import squarify
 
 def Role_Category_Graph(data_frame_selected, df):
-    uniqueValues=naukri_df['Role_Category'].unique()
-    o=naukri_df['Role_Category'].value_counts()
+    uniqueValues=data_frame_selected['Role_Category'].unique()
+    o=data_frame_selected['Role_Category'].value_counts()
     df_Role_cat=pd.DataFrame({"Role_Category":[0], "Count":[0]})
     for val in uniqueValues:
         if(str(val)=="nan"):
             pass
         else:
-            new_Row={"Employment_Type":str(val),"Count":o[val]}
+            new_Row={"Role_Category":str(val),"Count":o[val]}
             df_Role_cat=df_Role_cat.append(new_Row, ignore_index=True)
     df_Role_cat = df_Role_cat.drop(labels=0, axis=0)
 
@@ -21,7 +21,7 @@ def Role_Category_Graph(data_frame_selected, df):
     # Tree graph from Role Category
     """)
     v_R_c=df_Role_cat['Count']
-    labels_r_c = df_Role_cat['Employment_Type']
+    labels_r_c = df_Role_cat['Role_Category']
 
     plt.rc('font', size=5)
     squarify.plot(sizes=v_R_c, label=labels_r_c,
