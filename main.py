@@ -2,7 +2,7 @@ import streamlit as st
 from multiapp import MultiApp
 import csv
 # from apps import home, data, model # import your app modules here
-import myapp2, myapp, graphs
+import myapp2, graphs
 app = MultiApp()
 
 st.markdown("""

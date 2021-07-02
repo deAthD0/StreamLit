@@ -14,7 +14,7 @@ def app():
     st.set_option('deprecation.showPyplotGlobalUse', False)
 
     # Compiling all the csv with their total number of enteries
-    path = '/home/astrum/Dev/StreamLit/csv' # use your path
+    path = 'csv/' # use your path
     all_files = glob.glob(path + "/*.csv")
 
     li = []
@@ -25,7 +25,8 @@ def app():
         li.append(df)
         # creating bar chart's data frame
         lenght=len(df.index)
-        new_Row={"Csv_Date":str(filename[54:64]),"Count":lenght}
+        new_Row={"Csv_Date":str(filename[27:37]),"Count":lenght}
+        # print(filename[27:37])
         data=data.append(new_Row, ignore_index=True)
 
     data=data.drop(labels=0, axis=0)
