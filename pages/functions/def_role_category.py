@@ -27,5 +27,7 @@ def Role_Category_Graph(data_frame_selected, df):
     squarify.plot(sizes=v_R_c, label=labels_r_c,
                 alpha=0.6)
     plt.axis('off')
+    plt.legend(title='title', bbox_to_anchor=(1.05, 1), loc='upper left')
+
     st.pyplot()
 

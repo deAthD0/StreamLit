@@ -29,5 +29,7 @@ def Industry_type_graph(data_frame_selected, df):
     squarify.plot(sizes=v_I_t, label=labels_I_t,
                 alpha=0.6)
     plt.axis('off')
+    plt.legend(title='title', bbox_to_anchor=(1.05, 1), loc='upper left')
+
     st.pyplot()
 

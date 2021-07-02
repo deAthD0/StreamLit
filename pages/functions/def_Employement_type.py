@@ -28,4 +28,5 @@ def Employment_Type_graph(data_frame_selected, df):
     squarify.plot(sizes=v_Emp_type, label=labels_emp_type,
                 alpha=0.6)
     plt.axis('off')
+    plt.legend(title='title', bbox_to_anchor=(1.05, 1), loc='upper left')
     st.pyplot()

@@ -122,6 +122,8 @@ def app():
     p = p.properties(
         width=alt.Step(80)  # controls width of bar.
     )
+    plt.legend( title='title', bbox_to_anchor=(1.05, 1), loc='upper left')
+
     st.write(p)
 
     #tree graph as for sectors in the csv
@@ -134,6 +136,8 @@ def app():
     squarify.plot(sizes=volume, label=labels,
                 alpha=0.6)
     plt.axis('off')
+    plt.legend(title='title', bbox_to_anchor=(1.05, 1), loc='upper left')
+
     st.pyplot()
 
     # tree graph for Functional Area
@@ -147,6 +151,8 @@ def app():
     squarify.plot(sizes=v_Func_Area, label=labels_Func_Area,
                 alpha=0.6)
     plt.axis('off')
+    plt.legend(title='title', bbox_to_anchor=(1.05, 1), loc='upper left')
+
     st.pyplot()
 
 
@@ -162,6 +168,7 @@ def app():
     squarify.plot(sizes=v_Emp_type, label=labels_emp_type,
                 alpha=0.6)
     plt.axis('off')
+    plt.legend(title='title', bbox_to_anchor=(1.05, 1), loc='upper left')
     st.pyplot()
 
 
@@ -177,6 +184,8 @@ def app():
     squarify.plot(sizes=v_R_c, label=labels_r_c,
                 alpha=0.6)
     plt.axis('off')
+    plt.legend(title='title', bbox_to_anchor=(1.05, 1), loc='upper left')
+
     st.pyplot()
 
 
@@ -191,4 +200,6 @@ def app():
     squarify.plot(sizes=v_I_t, label=labels_I_t,
                 alpha=0.6)
     plt.axis('off')
+    plt.legend(title='title', bbox_to_anchor=(1.05, 1), loc='upper left')
+
     st.pyplot()

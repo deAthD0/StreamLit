@@ -26,5 +26,7 @@ def sector_graph(data_frame_selected,df):
     squarify.plot(sizes=volume, label=labels,
                 alpha=0.6)
     plt.axis('off')
+    plt.legend(title='title', bbox_to_anchor=(1.05, 1), loc='upper left')
+
     st.pyplot()
 

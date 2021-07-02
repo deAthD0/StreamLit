@@ -14,4 +14,6 @@ def BarChart(data):
     p = p.properties(
         width=alt.Step(80)  # controls width of bar.
     )
+    plt.legend(title='title', bbox_to_anchor=(1.05, 1), loc='upper left')
+
     st.write(p)

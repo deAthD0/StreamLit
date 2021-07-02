@@ -31,4 +31,6 @@ def Functional_area_graph(data_frame_selected, df):
     squarify.plot(sizes=v_Func_Area, label=labels_Func_Area,
                 alpha=0.6)
     plt.axis('off')
+    plt.legend(title='title', bbox_to_anchor=(1.05, 1), loc='upper left')
+
     st.pyplot()
