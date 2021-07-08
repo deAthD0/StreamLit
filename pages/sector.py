@@ -17,7 +17,7 @@ def sectors(coulmn, cell_val):
     st.set_option('deprecation.showPyplotGlobalUse', False)
 
     # Compiling all the csv with their total number of enteries
-    path = '/home/astrum/Dev/StreamLit/csv' # use your path
+    path = 'csv/' # use your path
     all_files = glob.glob(path + "/*.csv")
 
     li = []
