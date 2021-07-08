@@ -5,7 +5,7 @@ from pages.sector import sectors
 import glob
 def app():
     # naukri_df =pd.read_csv("csv/naukri_sector_job_infod2021-06-04.csv")
-    path = '/home/astrum/Dev/StreamLit/csv' # use your path
+    path = 'csv/' # use your path
     all_files = glob.glob(path + "/*.csv")
 
     li = []
