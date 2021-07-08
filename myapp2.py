@@ -203,3 +203,14 @@ def app():
     plt.legend(title='title', bbox_to_anchor=(1.05, 1), loc='upper left')
 
     st.pyplot()
+
+
+# altair==4.1.0
+# beautifulsoup4==4.9.3
+# matplotlib==3.4.2
+# matplotlib-inline==0.1.2
+# numpy==1.20.3
+# pandas==1.2.4
+# squarify==0.4.3
+# streamlit==0.83.0
+# virtualenv==20.4.7
