@@ -28,7 +28,7 @@ def sectors(coulmn, cell_val):
         li.append(df)
         # creating bar chart's data frame
         lenght=len(df.index)
-        new_Row={"Csv_Date":str(filename[54:64]),"Count":lenght}
+        new_Row={"Csv_Date":str(filename[27:37]),"Count":lenght}
         data=data.append(new_Row, ignore_index=True)
 
     data=data.drop(labels=0, axis=0)
